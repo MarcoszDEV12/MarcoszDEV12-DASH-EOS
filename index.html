@@ -235,7 +235,7 @@
         {type: 'qtd_just_anexo', label: 'TRATATIVAS'},
         {type: 'toggle_just', label: 'OPA'}
       ],
-      PICKING LEVE: [
+      "PICKING LEVE": [
         {type: 'sim_nao_just_anexo', label: 'DDS'},
         {type: 'meta_real_perc_anexo', label: 'META DMO'},
         {type: 'qtd_just_anexo', label: 'REIMPRESSÃO DE ENDEREÇO'},
@@ -245,7 +245,7 @@
         {type: 'idle_custom', label: 'IDLE TIME'},
         {type: 'sim_nao_just_anexo', label: 'OPA'}
       ],
-      PICKING VOL: [
+      "PICKING VOL": [
         {type: 'sim_nao_just_anexo', label: 'DDS'},
         {type: 'meta_real_perc_anexo', label: 'META DMO'},
         {type: 'qtd_just_anexo', label: 'REIMPRESSÃO DE ENDEREÇO'},
@@ -255,7 +255,7 @@
         {type: 'idle_custom', label: 'IDLE TIME'},
         {type: 'sim_nao_just_anexo', label: 'OPA'}
       ],
-      CHECKING LEVE: [
+      "CHECKING LEVE": [
         {type: 'sim_nao_just_anexo', label: 'DDS'},
         {type: 'meta_real_perc_anexo', label: 'META DMO'},
         {type: 'qtd_just_anexo', label: 'SOBRAS'},
@@ -265,7 +265,7 @@
         {type: 'idle_custom', label: 'IDLE TIME'},
         {type: 'sim_nao_just_anexo', label: 'OPA'}
       ],
-       CHECKING VOL: [
+       "CHECKING VOL": [
         {type: 'sim_nao_just_anexo', label: 'DDS'},
         {type: 'meta_real_perc_anexo', label: 'META DMO'},
         {type: 'qtd_just_anexo', label: 'SOBRAS'},
@@ -311,7 +311,7 @@
         {type: 'qtd_just_anexo', label: 'MTO'},
         {type: 'qtd_just_anexo', label: 'MTO FAIL'},
         {type: 'qtd_just_anexo', label: 'CHECKED'},
-        {type: 'qtd_just_anexo', label: 'PEÇAS AGUARDANDO TRATATIVAS'}
+        {type: 'qtd_just_anexo', label: 'PEÇAS AGUARDANDO TRATATIVAS'},
         {type: 'sim_nao_just_anexo', label: 'OPA'}
       ],
       QUALIDADE: [
@@ -334,20 +334,20 @@
         {type: 'qtd_just_anexo', label: 'RR'},
         {type: 'meta_real_perc_anexo', label: 'META DMO'},
         {type: 'sim_nao_just_anexo', label: 'OPA'}
-      ],
+      ]
     };
 
     function renderFields() {
       const area = document.getElementById('areaSelect').value;
       const container = document.getElementById('container_areas');
       container.innerHTML = "";
-      if(!area) return;
+      if(!area || !config[area]) return;
 
-      let html = `<div class="card-master"><div class="section-title">Indicadores Operacionais | ${area.replace('_', ' ')}</div>`;
+      let html = `<div class="card-master"><div class="section-title">Indicadores Operacionais | ${area}</div>`;
 
       config[area].forEach((item, idx) => {
-        const id = `${area}_${idx}`;
-        const prefix = `${area}_${item.label.replace(/\s+/g, '_')}`;
+        const id = `${area.replace(/\s+/g, '_')}_${idx}`;
+        const prefix = `${area.replace(/\s+/g, '_')}_${item.label.replace(/\s+/g, '_')}`;
 
         if (item.type === 'meta_real_perc_anexo') {
           html += `<div class="grid-row-dmo">
@@ -458,6 +458,22 @@
           html += `<div class="grid-row-item">
             <div class="font-bold text-gray-700 text-sm">${item.label} <span class="block text-[9px] text-gray-400">${item.desc || ''}</span></div>
             <div><input type="number" name="${prefix}_REAL" class="input-premium" placeholder="Real"></div>
+            <div class="col-span-2 flex gap-2">
+              <input type="text" name="${prefix}_JUST" class="input-premium flex-1" placeholder="Justificativa">
+              <button type="button" onclick="document.getElementById('file_${id}').click()" class="bg-gray-200 px-3 rounded-lg border text-[10px] font-bold">ANEXO</button>
+              <input type="file" id="file_${id}" class="hidden" onchange="handleFileUpload(this, '${id}')">
+              <input type="hidden" name="${prefix}_FOTO" id="data_${id}">
+            </div>
+          </div>`;
+        }
+        else if (item.type === 'sim_nao_just_anexo') {
+          html += `<div class="grid-row-item">
+            <div class="font-bold text-gray-700 text-sm">${item.label}</div>
+            <div class="flex gap-1">
+              <button type="button" onclick="setToggle(this, '${id}_v', 'SIM')" class="btn-toggle text-xs">SIM</button>
+              <button type="button" onclick="setToggle(this, '${id}_v', 'NÃO')" class="btn-toggle text-xs">NÃO</button>
+              <input type="hidden" id="${id}_v" name="${prefix}_STATUS">
+            </div>
             <div class="col-span-2 flex gap-2">
               <input type="text" name="${prefix}_JUST" class="input-premium flex-1" placeholder="Justificativa">
               <button type="button" onclick="document.getElementById('file_${id}').click()" class="bg-gray-200 px-3 rounded-lg border text-[10px] font-bold">ANEXO</button>
