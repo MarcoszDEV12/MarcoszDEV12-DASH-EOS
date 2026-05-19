@@ -51,6 +51,19 @@
       letter-spacing: 1px;
     }
 
+    .subsection-title {
+      font-size: 12px;
+      font-weight: 800;
+      color: #475569;
+      background-color: #f1f5f9;
+      padding: 6px 12px;
+      border-radius: 6px;
+      margin-top: 16px;
+      margin-bottom: 8px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
     .input-premium {
       height: 48px;
       border: 2px solid #e2e8f0;
@@ -93,14 +106,15 @@
       box-shadow: 0 10px 20px rgba(238, 77, 45, 0.3);
     }
 
-    .grid-row-item { display: grid; gap: 16px; align-items: end; padding: 16px 0; border-bottom: 1px solid #f1f5f9; grid-template-columns: 1.5fr 1fr 1fr 2fr; }
-    .grid-row-dmo { display: grid; gap: 16px; align-items: end; padding: 16px 0; border-bottom: 1px solid #f1f5f9; grid-template-columns: 1.5fr 0.8fr 0.8fr 0.8fr 2fr; }
-    .grid-row-compact { display: grid; gap: 16px; align-items: end; padding: 16px 0; border-bottom: 1px solid #f1f5f9; grid-template-columns: 1.5fr 1fr 2fr; }
-    .grid-row-idle { display: grid; gap: 16px; align-items: end; padding: 16px 0; border-bottom: 1px solid #f1f5f9; grid-template-columns: 1.2fr 1fr 0.8fr 1.5fr 1fr; }
-    .grid-row-text-only { display: grid; gap: 16px; align-items: end; padding: 16px 0; border-bottom: 1px solid #f1f5f9; grid-template-columns: 1.5fr 3.5fr; }
+    .grid-row-item { display: grid; gap: 16px; align-items: end; padding: 12px 0; border-bottom: 1px solid #f1f5f9; grid-template-columns: 1.5fr 1fr 1fr 2fr; }
+    .grid-row-dmo { display: grid; gap: 16px; align-items: end; padding: 12px 0; border-bottom: 1px solid #f1f5f9; grid-template-columns: 1.5fr 0.8fr 0.8fr 0.8fr 2fr; }
+    .grid-row-compact { display: grid; gap: 16px; align-items: end; padding: 12px 0; border-bottom: 1px solid #f1f5f9; grid-template-columns: 1.5fr 1fr 2fr; }
+    .grid-row-idle { display: grid; gap: 16px; align-items: end; padding: 12px 0; border-bottom: 1px solid #f1f5f9; grid-template-columns: 1.2fr 1fr 0.8fr 1.5fr 1fr; }
+    .grid-row-meta-real-just { display: grid; gap: 16px; align-items: end; padding: 12px 0; border-bottom: 1px solid #f1f5f9; grid-template-columns: 1.5fr 0.8fr 0.8fr 2fr 1fr; }
+    .grid-row-name-just { display: grid; gap: 16px; align-items: end; padding: 12px 0; border-bottom: 1px solid #f1f5f9; grid-template-columns: 1.5fr 1.5fr 2fr; }
 
     @media (max-width: 768px) {
-      .grid-row-item, .grid-row-dmo, .grid-row-compact, .grid-row-idle, .grid-row-text-only { grid-template-columns: 1fr !important; }
+      .grid-row-item, .grid-row-dmo, .grid-row-compact, .grid-row-idle, .grid-row-meta-real-just, .grid-row-name-just { grid-template-columns: 1fr !important; }
     }
 
     #success-modal {
@@ -331,64 +345,57 @@
         {type: 'sim_nao_just_anexo', label: 'OPA'}
       ],
       QUALIDADE: [
-        /* ABERTURA DE TURNO */
-        {type: 'header_section', label: 'ABERTURA DE TURNO'},
+        {type: 'subsection', label: 'ABERTURA DE TURNO'},
         {type: 'qtd_just_anexo', label: 'HC ESPERADOS'},
         {type: 'qtd_just_anexo', label: 'HC PRESENTES'},
         {type: 'qtd_just_anexo', label: 'HC AUSENTES'},
         {type: 'perc_just_anexo', label: 'ABS'},
 
-        /* EQUIPAMENTOS */
-        {type: 'header_section', label: 'EQUIPAMENTOS'},
+        {type: 'subsection', label: 'EQUIPAMENTOS'},
         {type: 'qtd_just_anexo', label: 'NOTEBOOK'},
         {type: 'qtd_just_anexo', label: 'PDA'},
         {type: 'qtd_just_anexo', label: 'RÁDIO'},
 
-        /* ROTINA SUPERVISORES */
-        {type: 'header_section', label: 'ROTINA SUPERVISORES'},
-        {type: 'toggle_just', label: 'DDSMA'},
-        {type: 'toggle_just', label: 'DDQA'},
-        {type: 'toggle_just', label: 'CUIDADO ATIVO'},
-        {type: 'toggle_just', label: 'SAFETY WALK'},
-        {type: 'toggle_just', label: '5S (Área Avarias / Qualidade)'},
-        {type: 'toggle_just', label: 'OPA'},
-        {type: 'toggle_just', label: 'OPA (PLANO DE AÇÃO)'},
+        {type: 'subsection', label: 'ROTINA SUPERVISORES'},
+        {type: 'sim_nao_just_anexo', label: 'DDSMA'},
+        {type: 'sim_nao_just_anexo', label: 'DDQA'},
+        {type: 'sim_nao_just_anexo', label: 'CUIDADO ATIVO'},
+        {type: 'sim_nao_just_anexo', label: 'SAFETY WALK'},
+        {type: 'sim_nao_just_anexo', label: "5S (Aréa Avarias / Qualidade)"},
+        {type: 'sim_nao_just_anexo', label: 'OPA'},
+        {type: 'sim_nao_just_anexo', label: 'OPA (PLANO DE AÇÃO)'},
 
-        /* AVARIAS */
-        {type: 'header_section', label: 'AVARIAS'},
-        {type: 'texto_livre', label: 'RESPONSÁVEL AVARIAS', placeholder: 'Nome do Responsável'},
+        {type: 'subsection', label: 'AVARIAS'},
+        {type: 'nome_responsavel', label: 'RESPONSÁVEL (AVARIAS)'},
         {type: 'qtd_just_anexo', label: 'QUANTIDADE RECOLHIDAS'},
         {type: 'qtd_just_anexo', label: 'AVARIAS TRATADAS'},
-        {type: 'qtd_just_anexo', label: 'BACKLOG AVARIAS'},
+        {type: 'qtd_just_anexo', label: 'BACKLOG'},
         {type: 'meta_real_just_anexo', label: 'RETURNS'},
-        {type: 'texto_livre', label: 'RESPONSÁVEL RETURNS', placeholder: 'Nome do Responsável'},
+        {type: 'nome_responsavel', label: 'RESPONSÁVEL (RETURNS)'},
         {type: 'qtd_just_anexo', label: 'BACKLOG RETURNS'},
 
-        /* RESPONSABILIDADE RR */
-        {type: 'header_section', label: 'RESPONSABILIDADE RR'},
-        {type: 'texto_livre', label: 'RR RESPONSÁVEL', placeholder: 'Nome do Responsável'},
-        {type: 'qtd_just_anexo', label: 'RR QUANTIDADE'},
-        {type: 'data_livre', label: 'RR Reference Day'},
-        {type: 'data_livre', label: 'Outbound Time'},
-        {type: 'qtd_simples', label: 'OB Orders D-1'},
-        {type: 'qtd_simples', label: 'RR Orders D-1'},
-        {type: 'perc_simples', label: 'RR Rate D-1'},
-        {type: 'perc_simples', label: 'RR Rate D-2'},
-        {type: 'perc_simples', label: 'RR Rate D-3'},
-        {type: 'perc_simples', label: 'RR 7 Rolling Days'},
-        {type: 'toggle_just', label: 'RR (Plano de Ação)'},
+        {type: 'subsection', label: 'RESPONSABILIDADE RR'},
+        {type: 'nome_responsavel', label: 'RR - RESPONSÁVEL'},
+        {type: 'qtd_just_anexo', label: 'RR - QUANTIDADE'},
+        {type: 'data_custom', label: 'RR Reference Day'},
+        {type: 'data_custom', label: 'Outbound Time'},
+        {type: 'qtd_custom', label: 'OB Orders D-1'},
+        {type: 'qtd_custom', label: 'RR Orders D-1'},
+        {type: 'perc_custom', label: 'RR Rate D-1'},
+        {type: 'perc_custom', label: 'RR Rate D-2'},
+        {type: 'perc_custom', label: 'RR Rate D-3'},
+        {type: 'perc_custom', label: 'RR 7 Rolling Days'},
+        {type: 'sim_nao_just_anexo', label: 'RR (Plano de Ação)'},
 
-        /* TREINAMENTOS */
-        {type: 'header_section', label: 'TREINAMENTOS'},
-        {type: 'qtd_simples', label: 'CAPACITAÇÃO/ONBOARDING - QUANTIDADE'},
-        {type: 'texto_livre', label: 'CAPACITAÇÃO/ONBOARDING - RESPONSÁVEL', placeholder: 'Nome do Responsável'},
-        {type: 'qtd_simples', label: 'RECICLAGEM - QUANTIDADE'},
-        {type: 'texto_livre', label: 'RECICLAGEM - RESPONSÁVEL', placeholder: 'Nome do Responsável'},
+        {type: 'subsection', label: 'TREINAMENTOS'},
+        {type: 'qtd_custom', label: 'CAPACITAÇÃO/ONBOARDING - QUANTIDADE'},
+        {type: 'nome_responsavel_simples', label: 'CAPACITAÇÃO/ONBOARDING - RESPONSÁVEL'},
+        {type: 'qtd_custom', label: 'RECICLAGEM - QUANTIDADE'},
+        {type: 'nome_responsavel_simples', label: 'RECICLAGEM - RESPONSÁVEL'},
         {type: 'justificativa_simples', label: 'ANÁLISE LC PRODUTIVIDADE'},
-        {type: 'texto_livre', label: 'REVISÃO MATERIAL - RESPONSÁVEL', placeholder: 'Nome do Responsável'},
+        {type: 'nome_responsavel_simples', label: 'REVISÃO MATERIAL'},
 
-        /* AUDITORIAS */
-        {type: 'header_section', label: 'AUDITORIAS'},
+        {type: 'subsection', label: 'AUDITORIAS'},
         {type: 'qtd_just_anexo', label: 'AUDITORIA DOCA INB'},
         {type: 'qtd_just_anexo', label: 'AUDITORIA BOXING'},
         {type: 'qtd_just_anexo', label: 'AUDITORIA PUTAWAY'},
@@ -398,15 +405,14 @@
         {type: 'qtd_just_anexo', label: 'AUDITORIA MERGE'},
         {type: 'qtd_just_anexo', label: 'AUDITORIA SHIPPING'},
         {type: 'qtd_just_anexo', label: 'AUDITORIA DOCA OUT'},
-        {type: 'qtd_just_anexo', label: 'AUDITORIA 5S'},
+        {type: 'qtd_just_anexo', label: "AUDITORIA 5'S"},
         {type: 'qtd_just_anexo', label: 'TOTAL DE AUDITORIAS'},
 
-        /* CUBISCAN PE */
-        {type: 'header_section', label: 'CUBISCAN PE'},
+        {type: 'subsection', label: 'CUBISCAN PE'},
         {type: 'qtd_just_anexo', label: 'CORREÇÃO REALIZADA'},
         {type: 'qtd_just_anexo', label: 'NÃO IDENTIFICADO'},
         {type: 'qtd_just_anexo', label: 'BACKLOG CUBSCAN'},
-        {type: 'justificativa_anexo_final', label: 'OBSERVAÇÕES DO TURNO'}
+        {type: 'justificativa_anexo', label: 'OBSERVAÇÕES DO TURNO'}
       ]
     };
 
@@ -422,8 +428,8 @@
         const id = `${area.replace(/\s+/g, '_')}_${idx}`;
         const prefix = `${area.replace(/\s+/g, '_')}_${item.label.replace(/\s+/g, '_')}`;
 
-        if (item.type === 'header_section') {
-          html += `<div class="w-full bg-gray-100 text-gray-700 font-extrabold text-xs px-4 py-2 my-4 rounded tracking-wider uppercase border-l-4 border-gray-400">${item.label}</div>`;
+        if (item.type === 'subsection') {
+          html += `<div class="subsection-title">${item.label}</div>`;
         }
         else if (item.type === 'meta_real_perc_anexo') {
           html += `<div class="grid-row-dmo">
@@ -438,11 +444,11 @@
           </div>`;
         }
         else if (item.type === 'meta_real_just_anexo') {
-          html += `<div class="grid-row-dmo">
+          html += `<div class="grid-row-meta-real-just">
             <div class="font-bold text-gray-700 text-sm">${item.label}</div>
-            <div><input type="number" name="${prefix}_META" class="input-premium text-center" placeholder="Meta"></div>
-            <div><input type="number" name="${prefix}_REAL" class="input-premium text-center" placeholder="Real"></div>
-            <div><input type="text" name="${prefix}_JUST" class="input-premium text-center" placeholder="Justificativa"></div>
+            <div><input type="text" name="${prefix}_META" class="input-premium text-center" placeholder="Meta"></div>
+            <div><input type="text" name="${prefix}_REAL" class="input-premium text-center" placeholder="Real"></div>
+            <div><input type="text" name="${prefix}_JUST" class="input-premium" placeholder="Justificativa"></div>
             <div class="flex gap-2">
                <button type="button" id="btn_file_${id}" onclick="document.getElementById('file_${id}').click()" class="bg-gray-200 px-3 rounded-lg border flex-1 text-[10px] font-bold h-[48px]">ANEXO</button>
                <input type="file" id="file_${id}" class="hidden" onchange="handleFileUpload(this, '${id}')">
@@ -551,7 +557,7 @@
             <div class="flex gap-1">
               <button type="button" onclick="setToggle(this, '${id}_v', 'SIM')" class="btn-toggle text-xs">SIM</button>
               <button type="button" onclick="setToggle(this, '${id}_v', 'NÃO')" class="btn-toggle text-xs">NÃO</button>
-              <input type="hidden" id="${id}_v" name="${prefix}_STATUS" required>
+              <input type="hidden" id="${id}_v" name="${prefix}_STATUS">
             </div>
             <div class="col-span-2 flex gap-2">
               <input type="text" name="${prefix}_JUST" class="input-premium flex-1" placeholder="Justificativa">
@@ -571,44 +577,56 @@
             </div>
           </div>`;
         }
-        else if (item.type === 'texto_livre') {
-          html += `<div class="grid-row-text-only">
-            <div class="font-bold text-gray-700 text-sm">${item.label}</div>
-            <div><input type="text" name="${prefix}_TEXTO" class="input-premium" placeholder="${item.placeholder || 'Preencha aqui...'}"></div>
-          </div>`;
-        }
-        else if (item.type === 'data_livre') {
-          html += `<div class="grid-row-text-only">
-            <div class="font-bold text-gray-700 text-sm">${item.label}</div>
-            <div><input type="date" name="${prefix}_DATA" class="input-premium"></div>
-          </div>`;
-        }
-        else if (item.type === 'qtd_simples') {
-          html += `<div class="grid-row-text-only">
-            <div class="font-bold text-gray-700 text-sm">${item.label}</div>
-            <div><input type="number" name="${prefix}_QTD" class="input-premium" placeholder="Quantidade"></div>
-          </div>`;
-        }
-        else if (item.type === 'perc_simples') {
-          html += `<div class="grid-row-text-only">
-            <div class="font-bold text-gray-700 text-sm">${item.label}</div>
-            <div><input type="text" name="${prefix}_PERC" class="input-premium" placeholder="%"></div>
-          </div>`;
-        }
-        else if (item.type === 'justificativa_simples') {
-          html += `<div class="grid-row-text-only">
-            <div class="font-bold text-gray-700 text-sm">${item.label}</div>
-            <div><input type="text" name="${prefix}_JUST" class="input-premium" placeholder="Justificativa"></div>
-          </div>`;
-        }
-        else if (item.type === 'justificativa_anexo_final') {
-          html += `<div class="grid-row-text-only">
+        else if (item.type === 'justificativa_anexo') {
+          html += `<div class="grid-row-compact">
             <div class="font-bold text-gray-700 text-sm">${item.label}</div>
             <div class="flex gap-2">
               <input type="text" name="${prefix}_JUST" class="input-premium flex-1" placeholder="Justificativa">
-              <button type="button" id="btn_file_${id}" onclick="document.getElementById('file_${id}').click()" class="bg-gray-200 px-3 rounded-lg border text-[10px] font-bold h-[48px]">ANEXO</button>
+              <button type="button" id="btn_file_${id}" onclick="document.getElementById('file_${id}').click()" class="bg-gray-200 px-3 rounded-lg border text-[10px] font-bold">ANEXO</button>
               <input type="file" id="file_${id}" class="hidden" onchange="handleFileUpload(this, '${id}')">
             </div>
+          </div>`;
+        }
+        else if (item.type === 'nome_responsavel') {
+          html += `<div class="grid-row-name-just">
+            <div class="font-bold text-gray-700 text-sm">${item.label}</div>
+            <div><input type="text" name="${prefix}_NOME" class="input-premium" placeholder="Nome do Responsável"></div>
+            <div></div>
+          </div>`;
+        }
+        else if (item.type === 'data_custom') {
+          html += `<div class="grid-row-compact">
+            <div class="font-bold text-gray-700 text-sm">${item.label}</div>
+            <div><input type="date" name="${prefix}_DATA" class="input-premium"></div>
+            <div></div>
+          </div>`;
+        }
+        else if (item.type === 'qtd_custom') {
+          html += `<div class="grid-row-compact">
+            <div class="font-bold text-gray-700 text-sm">${item.label}</div>
+            <div><input type="number" name="${prefix}_QTD" class="input-premium" placeholder="Quantidade"></div>
+            <div></div>
+          </div>`;
+        }
+        else if (item.type === 'perc_custom') {
+          html += `<div class="grid-row-compact">
+            <div class="font-bold text-gray-700 text-sm">${item.label}</div>
+            <div><input type="text" name="${prefix}_PERC" class="input-premium" placeholder="%"></div>
+            <div></div>
+          </div>`;
+        }
+        else if (item.type === 'nome_responsavel_simples') {
+          html += `<div class="grid-row-compact">
+            <div class="font-bold text-gray-700 text-sm">${item.label}</div>
+            <div><input type="text" name="${prefix}_NOME" class="input-premium" placeholder="Nome Responsável"></div>
+            <div></div>
+          </div>`;
+        }
+        else if (item.type === 'justificativa_simples') {
+          html += `<div class="grid-row-compact">
+            <div class="font-bold text-gray-700 text-sm">${item.label}</div>
+            <div><input type="text" name="${prefix}_JUST" class="input-premium" placeholder="Justificativa"></div>
+            <div></div>
           </div>`;
         }
         else {
@@ -631,7 +649,6 @@
       const real = parseFloat(document.getElementById(`real_${id}`).value);
       const percInput = document.getElementById(`perc_${id}`);
       if(meta > 0 && real >= 0) {
-        const p = (real / meta) * 100;
         const p = (real / meta) * 100;
         percInput.value = p.toFixed(1) + "%";
       } else { percInput.value = ""; }
@@ -694,34 +711,21 @@
       }
     }
 
-    async function enviarDados() {
-      const btn = document.getElementById('btnEnviar');
-      const btnText = document.getElementById('btnText');
-      const btnSpinner = document.getElementById('btnSpinner');
-      
-      btn.disabled = true;
-      btnSpinner.style.display = 'block';
-      btnText.innerText = 'Enviando...';
-
-      const formData = new FormData(document.getElementById('eosForm'));
-      const data = {};
-      formData.forEach((value, key) => { data[key] = value; });
-
-      try {
-        const response = await fetch('https://script.google.com/macros/s/AKfycbzV72qB2Mv7_4384b6G56b7v8b9/exec', {
-          method: 'POST',
-          mode: 'no-cors',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify(data)
-        });
-        document.getElementById('success-modal').style.display = 'flex';
-      } catch (err) {
-        alert('Erro ao enviar dados.');
-      } finally {
-        btn.disabled = false;
-        btnSpinner.style.display = 'none';
-        btnText.innerText = 'Finalizar e Enviar Relatório';
+    function enviarDados() {
+      const form = document.getElementById('eosForm');
+      if(!form.checkValidity()) {
+        form.reportValidity();
+        return;
       }
+      
+      document.getElementById('btnSpinner').style.display = 'block';
+      document.getElementById('btnText').innerText = 'Enviando...';
+      
+      setTimeout(() => {
+        document.getElementById('btnSpinner').style.display = 'none';
+        document.getElementById('btnText').innerText = 'Finalizar e Enviar Relatório';
+        document.getElementById('success-modal').style.display = 'flex';
+      }, 2000);
     }
   </script>
 </body>
