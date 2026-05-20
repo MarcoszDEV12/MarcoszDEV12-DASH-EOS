@@ -13,7 +13,7 @@
       --shopee-orange: #EE4D2D;
       --shopee-dark: #1e1e24;
       --shopee-bg: #f5f7fb;
-      --card-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.07);
+      --card-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05);
     }
  
     body {
@@ -24,20 +24,20 @@
 
     .shopee-header {
       background: linear-gradient(135deg, #ee4d2d, #ff5722);
-      padding: 20px 32px;
+      padding: 12px 24px;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      box-shadow: 0 10px 30px rgba(238, 77, 45, 0.25);
+      box-shadow: 0 8px 20px rgba(238, 77, 45, 0.15);
       border-bottom: 3px solid #ff7337;
     }
 
     .card-master {
       background: white;
-      border-radius: 24px;
+      border-radius: 16px;
       box-shadow: var(--card-shadow);
-      margin-bottom: 32px;
-      padding: 32px;
+      margin-bottom: 16px;
+      padding: 20px;
       border: 1px solid #e2e8f0;
       position: relative;
       overflow: hidden;
@@ -49,39 +49,56 @@
       top: 0;
       left: 0;
       width: 100%;
-      height: 6px;
+      height: 4px;
       background: linear-gradient(90deg, #ee4d2d, #ff7337);
     }
 
     .section-title {
-      font-size: 16px;
+      font-size: 15px;
       font-weight: 900;
       color: #0f172a;
       letter-spacing: 0.5px;
       display: flex;
       align-items: center;
-      gap: 10px;
-      margin-bottom: 28px;
+      gap: 8px;
+      margin-bottom: 16px;
       text-transform: uppercase;
     }
 
     .section-title::before {
       content: '';
       display: inline-block;
-      width: 6px;
-      height: 22px;
+      width: 5px;
+      height: 18px;
       background: var(--shopee-orange);
-      border-radius: 4px;
+      border-radius: 3px;
+    }
+
+    /* Subtítulos de Destaque dentro da Qualidade */
+    .quality-sub-header {
+      font-size: 11px;
+      font-weight: 900;
+      color: #ee4d2d;
+      text-transform: uppercase;
+      letter-spacing: 1.2px;
+      background-color: #fff5f3;
+      padding: 6px 12px;
+      border-left: 4px solid #ee4d2d;
+      border-radius: 0 6px 6px 0;
+      margin-top: 14px;
+      margin-bottom: 6px;
+      display: block;
+      width: 100%;
     }
 
     .input-premium {
-      height: 52px;
-      border: 2px solid #e2e8f0;
-      border-radius: 14px;
-      padding: 0 18px;
+      height: 38px;
+      border: 1.5px solid #e2e8f0;
+      border-radius: 8px;
+      padding: 0 12px;
       width: 100%;
-      transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
-      font-size: 14px;
+      transition: all 0.2s ease;
+      font-size: 13px;
       font-weight: 600;
       background: #f8fafc;
       color: #334155;
@@ -91,27 +108,27 @@
       border-color: var(--shopee-orange);
       outline: none;
       background: #fff;
-      box-shadow: 0 0 0 4px rgba(238, 77, 45, 0.15);
+      box-shadow: 0 0 0 3px rgba(238, 77, 45, 0.1);
     }
 
     select.input-premium {
       appearance: none;
       background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='%2364748b' stroke-width='2.5'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' d='M19.5 8.25l-7.5 7.5-7.5-7.5'/%3E%3C/svg%3E");
       background-repeat: no-repeat;
-      background-position: right 16px center;
-      background-size: 16px;
-      padding-right: 40px;
+      background-position: right 12px center;
+      background-size: 14px;
+      padding-right: 32px;
     }
 
     .btn-toggle {
-      height: 52px;
+      height: 38px;
       flex: 1;
-      border: 2px solid #e2e8f0;
-      border-radius: 14px;
+      border: 1.5px solid #e2e8f0;
+      border-radius: 8px;
       font-weight: 800;
       background: #f8fafc;
       color: #64748b;
-      transition: all 0.2s ease;
+      transition: all 0.15s ease;
       letter-spacing: 0.5px;
     }
 
@@ -120,8 +137,8 @@
       border-color: #cbd5e1;
     }
 
-    .active-sim { background: #10b981 !important; color: white !important; border-color: #10b981 !important; box-shadow: 0 6px 20px rgba(16, 185, 129, 0.3); }
-    .active-nao { background: #ee4d2d !important; color: white !important; border-color: #ee4d2d !important; box-shadow: 0 6px 20px rgba(238, 77, 45, 0.3); }
+    .active-sim { background: #10b981 !important; color: white !important; border-color: #10b981 !important; box-shadow: 0 3px 10px rgba(16, 185, 129, 0.2); }
+    .active-nao { background: #ee4d2d !important; color: white !important; border-color: #ee4d2d !important; box-shadow: 0 3px 10px rgba(238, 77, 45, 0.2); }
 
     .btn-send {
       background: linear-gradient(95deg, #1e1e24, #0f172a);
@@ -130,32 +147,37 @@
       text-transform: uppercase;
       letter-spacing: 1px;
       transition: all 0.3s;
-      box-shadow: 0 12px 30px rgba(15, 23, 42, 0.25);
+      box-shadow: 0 8px 20px rgba(15, 23, 42, 0.2);
       border: 1px solid #334155;
     }
 
     .btn-send:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 16px 35px rgba(15, 23, 42, 0.35);
+      transform: translateY(-1px);
+      box-shadow: 0 12px 25px rgba(15, 23, 42, 0.3);
       background: linear-gradient(95deg, #0f172a, #020617);
     }
 
-    .grid-row-item { display: grid; gap: 20px; align-items: center; padding: 20px 0; border-bottom: 1px solid #f1f5f9; grid-template-columns: 1.8fr 1fr 1fr 2fr; }
-    .grid-row-dmo { display: grid; gap: 20px; align-items: center; padding: 20px 0; border-bottom: 1px solid #f1f5f9; grid-template-columns: 1.8fr 0.9fr 0.9fr 0.9fr 2fr; }
-    .grid-row-compact { display: grid; gap: 20px; align-items: center; padding: 20px 0; border-bottom: 1px solid #f1f5f9; grid-template-columns: 1.8fr 1fr 2fr; }
-    .grid-row-idle { display: grid; gap: 20px; align-items: center; padding: 20px 0; border-bottom: 1px solid #f1f5f9; grid-template-columns: 1.5fr 1fr 0.9fr 1.8fr 1fr; }
-    .grid-row-custom { display: grid; gap: 20px; align-items: center; padding: 20px 0; border-bottom: 1px solid #f1f5f9; grid-template-columns: 2fr 1fr 2fr; }
-    .grid-row-single { display: grid; gap: 20px; align-items: center; padding: 20px 0; border-bottom: 1px solid #f1f5f9; grid-template-columns: 2fr 2fr; }
+    /* Estrutura Unificada Grid para Alinhamento Perfeito de Linhas */
+    .unified-grid-row {
+      display: grid;
+      gap: 12px;
+      align-items: center;
+      padding: 4px 8px;
+      border-bottom: 1px solid #f1f5f9;
+      grid-template-columns: 2fr 1fr 2.5fr 0.8fr;
+    }
 
-    .grid-row-item:hover, .grid-row-dmo:hover, .grid-row-compact:hover, .grid-row-idle:hover, .grid-row-custom:hover, .grid-row-single:hover {
+    .unified-grid-row:hover {
       background-color: #f8fafc;
-      border-radius: 12px;
-      padding-left: 10px;
-      padding-right: 10px;
+      border-radius: 8px;
     }
 
     @media (max-width: 768px) {
-      .grid-row-item, .grid-row-dmo, .grid-row-compact, .grid-row-idle, .grid-row-custom, .grid-row-single { grid-template-columns: 1fr !important; gap: 12px; padding: 16px 8px; }
+      .unified-grid-row { 
+        grid-template-columns: 1fr !important; 
+        gap: 8px; 
+        padding: 10px 4px; 
+      }
     }
 
     #success-modal {
@@ -169,17 +191,16 @@
       justify-content: center;
     }
 
-    .spinner { display: none; width: 22px; height: 22px; border: 3px solid rgba(255,255,255,0.3); border-radius: 50%; border-top-color: #fff; animation: spin 0.8s linear infinite; }
+    .spinner { display: none; width: 20px; height: 20px; border: 3px solid rgba(255,255,255,0.3); border-radius: 50%; border-top-color: #fff; animation: spin 0.8s linear infinite; }
     @keyframes spin { to { transform: rotate(360deg); } }
 
     .btn-attached {
       background-color: #10b981 !important;
       border-color: #059669 !important;
       color: white !important;
-      box-shadow: 0 4px 12px rgba(16, 185, 129, 0.2);
+      box-shadow: 0 3px 8px rgba(16, 185, 129, 0.15);
     }
 
-    /* Estilização para espelho de impressão/captura estável de inputs */
     .canvas-snapshot .input-premium {
       background: #ffffff !important;
       border-color: #cbd5e1 !important;
@@ -194,24 +215,24 @@
 <body>
 
   <header class="shopee-header shadow-md sticky top-0 z-50">
-    <div class="flex items-center gap-4">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/f/fe/Shopee.svg" alt="Shopee" class="h-9 brightness-0 invert">
-      <div class="text-white border-l-2 border-white/30 pl-4">
-        <h1 class="text-2xl font-black tracking-tighter">EOS-BR</h1>
-        <p class="text-[11px] font-bold uppercase opacity-90 tracking-widest">PASSAGEM DE TURNO</p>
+    <div class="flex items-center gap-3">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/f/fe/Shopee.svg" alt="Shopee" class="h-7 brightness-0 invert">
+      <div class="text-white border-l-2 border-white/30 pl-3">
+        <h1 class="text-xl font-black tracking-tighter">EOS-BR</h1>
+        <p class="text-[9px] font-bold uppercase opacity-90 tracking-widest">PASSAGEM DE TURNO</p>
       </div>
     </div>
-    <div id="clock" class="bg-black/20 text-white px-5 py-2 rounded-full text-sm font-bold border border-white/20 backdrop-blur-sm tracking-wide">00:00:00</div>
+    <div id="clock" class="bg-black/20 text-white px-4 py-1 rounded-full text-xs font-bold border border-white/20 backdrop-blur-sm tracking-wide">00:00:00</div>
   </header>
 
-  <main class="max-w-6xl mx-auto p-4 md:p-10">
+  <main class="max-w-6xl mx-auto p-4 md:p-6">
     <div id="report-content">
       <form id="eosForm">
         <div class="card-master">
           <div class="section-title">Informações de Identificação</div>
-          <div class="grid grid-cols-1 md:grid-cols-5 gap-5">
+          <div class="grid grid-cols-1 md:grid-cols-5 gap-3">
             <div>
-              <label class="text-[11px] font-black text-slate-500 mb-2 block uppercase tracking-wider">CD Operacional</label>
+              <label class="text-[10px] font-black text-slate-500 mb-1 block uppercase tracking-wider">CD Operacional</label>
               <select name="cd_operacional" class="input-premium" required>
                 <option value="">Selecione...</option>
                 <option value="BRPE1">BRPE1</option>
@@ -223,11 +244,11 @@
               </select>
             </div>
             <div>
-              <label class="text-[11px] font-black text-slate-500 mb-2 block uppercase tracking-wider">Responsável</label>
+              <label class="text-[10px] font-black text-slate-500 mb-1 block uppercase tracking-wider">Responsável</label>
               <input type="text" name="responsavel" class="input-premium" placeholder="Nome" required>
             </div>
             <div>
-              <label class="text-[11px] font-black text-slate-500 mb-2 block uppercase tracking-wider">Cargo</label>
+              <label class="text-[10px] font-black text-slate-500 mb-1 block uppercase tracking-wider">Cargo</label>
               <select name="cargo" class="input-premium" required>
                 <option value="">Selecione</option>
                 <option value="TEAM LEADER">TEAM LEADER</option>
@@ -239,14 +260,14 @@
               </select>
             </div>
             <div>
-              <label class="text-[11px] font-black text-slate-500 mb-2 block uppercase tracking-wider">Turno</label>
+              <label class="text-[10px] font-black text-slate-500 mb-1 block uppercase tracking-wider">Turno</label>
               <select name="turno" class="input-premium" required>
                 <option value="T1">T1</option><option value="T2">T2</option><option value="T3">T3</option>
                 <option value="T4">T4</option><option value="T5">T5</option><option value="T6">T6</option><option value="T7">T7</option>
               </select>
             </div>
             <div>
-              <label class="text-[11px] font-black text-orange-600 mb-2 block uppercase tracking-wider">Área de Atuação</label>
+              <label class="text-[10px] font-black text-orange-600 mb-1 block uppercase tracking-wider">Área de Atuação</label>
               <select name="area_atuacao" id="areaSelect" class="input-premium border-orange-300 bg-orange-50 font-extrabold text-orange-700 shadow-sm" required onchange="renderFields()">
                   <option value="">SELECIONAR ÁREA</option>
                   <option value="INBOUND">INBOUND</option>
@@ -267,18 +288,18 @@
 
         <div class="card-master">
           <div class="section-title">Conclusão e Evidências</div>
-          <textarea name="JUSTIFICATIVA_FINAL" class="input-premium h-32 mb-6 py-4 resize-none block" placeholder="Relate aqui os principais desafios, gargalos ou recados para o próximo turno..."></textarea>
-          <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-              <button type="button" id="btn_file_final" onclick="document.getElementById('file_final').click()" class="bg-slate-50 p-4 rounded-xl font-bold border-2 border-dashed border-slate-300 text-slate-600 hover:bg-slate-100 hover:border-slate-400 transition-all uppercase text-xs tracking-wider">📸 ANEXO PASSAGEM DE TURNO</button>
-              <button type="button" id="btnDownload" onclick="baixarRelatorio()" class="bg-orange-600 text-white p-4 rounded-xl font-black border-2 border-transparent hover:bg-orange-700 transition-all shadow-md text-xs tracking-wider uppercase">📥 GERAR E DESCARREGAR CARD (PNG)</button>
+          <textarea name="JUSTIFICATIVA_FINAL" class="input-premium h-24 mb-4 py-2 resize-none block" placeholder="Relate aqui os principais desafios, gargalos ou recados para o próximo turno..."></textarea>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
+              <button type="button" id="btn_file_final" onclick="document.getElementById('file_final').click()" class="bg-slate-50 p-3 rounded-xl font-bold border-2 border-dashed border-slate-300 text-slate-600 hover:bg-slate-100 hover:border-slate-400 transition-all uppercase text-[11px] tracking-wider">📸 ANEXO PASSAGEM DE TURNO</button>
+              <button type="button" id="btnDownload" onclick="baixarRelatorio()" class="bg-orange-600 text-white p-3 rounded-xl font-black border-2 border-transparent hover:bg-orange-700 transition-all shadow-md text-[11px] tracking-wider uppercase">📥 GERAR E DESCARREGAR CARD (PNG)</button>
           </div>
           <input type="file" id="file_final" class="hidden" accept="image/*" onchange="handleFileUpload(this, 'final')">
           <input type="hidden" name="FOTO_FINAL" id="data_final">
           <input type="hidden" name="drive_folder_link" value="https://drive.google.com/drive/folders/15SYHiWGr2mX3cv4UrgT99M5MxG5P1Xy6">
         </div>
 
-        <button type="button" id="btnEnviar" onclick="enviarDados()" class="btn-send w-full p-6 rounded-2xl flex items-center justify-center gap-4 mb-20">
-          <span id="btnText" class="text-lg">Finalizar e Enviar Relatório</span>
+        <button type="button" id="btnEnviar" onclick="enviarDados()" class="btn-send w-full p-4 rounded-xl flex items-center justify-center gap-3 mb-12">
+          <span id="btnText" class="text-base">Finalizar e Enviar Relatório</span>
           <div id="btnSpinner" class="spinner"></div>
         </button>
       </form>
@@ -286,11 +307,11 @@
   </main>
 
   <div id="success-modal">
-    <div class="bg-white p-10 rounded-2xl text-center shadow-2xl max-w-sm border border-slate-100">
-      <div class="text-6xl mb-4">✅</div>
-      <h2 class="text-2xl font-black mb-2 text-slate-900">Relatório Salvo!</h2>
-      <p class="text-slate-500 mb-6 text-sm">Passagem de turno enviada com sucesso para a pasta do Drive.</p>
-      <button class="bg-orange-600 text-white w-full py-3 rounded-xl font-bold hover:bg-orange-700 shadow-md transition-all" onclick="location.reload()">NOVO REGISTRO</button>
+    <div class="bg-white p-8 rounded-2xl text-center shadow-2xl max-w-sm border border-slate-100">
+      <div class="text-5xl mb-3">✅</div>
+      <h2 class="text-xl font-black mb-1 text-slate-900">Relatório Salvo!</h2>
+      <p class="text-slate-500 mb-4 text-xs">Passagem de turno enviada com sucesso para a pasta do Drive.</p>
+      <button class="bg-orange-600 text-white w-full py-2.5 rounded-xl font-bold hover:bg-orange-700 shadow-md transition-all" onclick="location.reload()">NOVO REGISTRO</button>
     </div>
   </div>
 
@@ -477,203 +498,222 @@
         const prefix = `${area.replace(/\s+/g, '_')}_${item.label.replace(/\s+/g, '_')}`;
 
         if (item.type === 'section_header') {
-          html += `<div class="text-xs font-black text-slate-400 uppercase mt-8 mb-4 border-b border-slate-100 pb-2 tracking-widest">${item.label}</div>`;
+          html += `<div class="quality-sub-header">${item.label}</div>`;
         }
         else if (item.type === 'meta_real_perc_anexo') {
-          html += `<div class="grid-row-dmo">
+          html += `<div class="unified-grid-row">
             <div class="font-bold text-slate-700 text-sm">${item.label}</div>
-            <div><input type="number" id="meta_${id}" name="${prefix}_META" class="input-premium text-center" placeholder="Meta"></div>
-            <div><input type="number" id="real_${id}" name="${prefix}_REAL" class="input-premium text-center" placeholder="Real" oninput="calcPerc('${id}')"></div>
+            <div class="grid grid-cols-2 gap-1">
+              <input type="number" id="meta_${id}" name="${prefix}_META" class="input-premium text-center" placeholder="Meta">
+              <input type="number" id="real_${id}" name="${prefix}_REAL" class="input-premium text-center" placeholder="Real" oninput="calcPerc('${id}')">
+            </div>
             <div><input type="text" id="perc_${id}" name="${prefix}_PERC" class="input-premium bg-slate-100 text-center font-bold text-orange-600" placeholder="%" readonly></div>
-            <div class="flex gap-2">
-               <button type="button" id="btn_file_${id}" onclick="document.getElementById('file_${id}').click()" class="bg-slate-200 hover:bg-slate-300 text-slate-700 px-3 rounded-xl border border-slate-300 flex-1 text-[10px] font-black h-[52px] transition-all uppercase tracking-wider">ANEXO</button>
+            <div>
+               <button type="button" id="btn_file_${id}" onclick="document.getElementById('file_${id}').click()" class="bg-slate-200 hover:bg-slate-300 text-slate-700 w-full text-[10px] font-black h-[38px] rounded-lg border border-slate-300 transition-all uppercase tracking-wider">ANEXO</button>
                <input type="file" id="file_${id}" class="hidden" onchange="handleFileUpload(this, '${id}')">
             </div>
           </div>`;
         }
         else if (item.type === 'sim_nao_anexo') {
-          html += `<div class="grid-row-compact">
+          html += `<div class="unified-grid-row">
             <div class="font-bold text-slate-700 text-sm">${item.label}</div>
-            <div class="flex gap-2">
+            <div class="flex gap-1">
               <button type="button" onclick="setToggle(this, '${id}_v', 'SIM')" class="btn-toggle text-xs">SIM</button>
               <button type="button" onclick="setToggle(this, '${id}_v', 'NÃO')" class="btn-toggle text-xs">NÃO</button>
               <input type="hidden" id="${id}_v" name="${prefix}_STATUS">
             </div>
-            <div class="flex gap-2">
-              <button type="button" id="btn_file_${id}" onclick="document.getElementById('file_${id}').click()" class="bg-slate-200 hover:bg-slate-300 text-slate-700 px-3 rounded-xl border border-slate-300 flex-1 text-[10px] font-black h-[52px] transition-all uppercase tracking-wider">ANEXO</button>
+            <div><input type="text" class="input-premium opacity-50" placeholder="Sem justificativa" disabled></div>
+            <div>
+              <button type="button" id="btn_file_${id}" onclick="document.getElementById('file_${id}').click()" class="bg-slate-200 hover:bg-slate-300 text-slate-700 w-full text-[10px] font-black h-[38px] rounded-lg border border-slate-300 transition-all uppercase tracking-wider">ANEXO</button>
               <input type="file" id="file_${id}" class="hidden" onchange="handleFileUpload(this, '${id}')">
             </div>
           </div>`;
         }
         else if (item.type === 'toggle_just') {
-          html += `<div class="grid-row-item">
+          html += `<div class="unified-grid-row">
             <div class="font-bold text-slate-700 text-sm">${item.label}</div>
-            <div class="flex gap-2">
+            <div class="flex gap-1">
               <button type="button" onclick="setToggle(this, '${id}_v', 'SIM')" class="btn-toggle text-xs">SIM</button>
               <button type="button" onclick="setToggle(this, '${id}_v', 'NÃO')" class="btn-toggle text-xs">NÃO</button>
               <input type="hidden" id="${id}_v" name="${prefix}_STATUS">
             </div>
-            <div class="col-span-2 flex gap-2">
-              <input type="text" name="${prefix}_JUST" class="input-premium flex-1" placeholder="Justificativa">
-              <button type="button" id="btn_file_${id}" onclick="document.getElementById('file_${id}').click()" class="bg-slate-200 hover:bg-slate-300 text-slate-700 px-3 rounded-xl border border-slate-300 text-[10px] font-black uppercase tracking-wider">ANEXO</button>
+            <div><input type="text" name="${prefix}_JUST" class="input-premium" placeholder="Justificativa"></div>
+            <div>
+              <button type="button" id="btn_file_${id}" onclick="document.getElementById('file_${id}').click()" class="bg-slate-200 hover:bg-slate-300 text-slate-700 w-full text-[10px] font-black h-[38px] rounded-lg border border-slate-300 transition-all uppercase tracking-wider">ANEXO</button>
               <input type="file" id="file_${id}" class="hidden" onchange="handleFileUpload(this, '${id}')">
             </div>
           </div>`;
         }
         else if (item.type === 'relogio_just_anexo') {
-          html += `<div class="grid-row-item">
+          html += `<div class="unified-grid-row">
             <div class="font-bold text-slate-700 text-sm">${item.label}</div>
             <div><input type="time" name="${prefix}_HORA" class="input-premium"></div>
-            <div class="col-span-2 flex gap-2">
-              <input type="text" name="${prefix}_JUST" class="input-premium flex-1" placeholder="Justificativa">
-              <button type="button" id="btn_file_${id}" onclick="document.getElementById('file_${id}').click()" class="bg-slate-200 hover:bg-slate-300 text-slate-700 px-3 rounded-xl border border-slate-300 text-[10px] font-black uppercase tracking-wider">ANEXO</button>
+            <div><input type="text" name="${prefix}_JUST" class="input-premium" placeholder="Justificativa"></div>
+            <div>
+              <button type="button" id="btn_file_${id}" onclick="document.getElementById('file_${id}').click()" class="bg-slate-200 hover:bg-slate-300 text-slate-700 w-full text-[10px] font-black h-[38px] rounded-lg border border-slate-300 transition-all uppercase tracking-wider">ANEXO</button>
               <input type="file" id="file_${id}" class="hidden" onchange="handleFileUpload(this, '${id}')">
             </div>
           </div>`;
         }
         else if (item.type === 'meta_fixa_just_anexo') {
-          html += `<div class="grid-row-item">
-            <div class="font-bold text-slate-700 text-sm">${item.label} <span class="block text-[10px] font-extrabold text-orange-500 mt-0.5">META: ${item.fixed}</span></div>
+          html += `<div class="unified-grid-row">
+            <div class="font-bold text-slate-700 text-sm">${item.label} <span class="inline-block text-[9px] font-extrabold text-orange-500 ml-1">META: ${item.fixed}</span></div>
             <div><input type="text" name="${prefix}_REAL" class="input-premium" placeholder="Real"></div>
-            <div class="col-span-2 flex gap-2">
-              <input type="text" name="${prefix}_JUST" class="input-premium flex-1" placeholder="Justificativa">
-              <button type="button" id="btn_file_${id}" onclick="document.getElementById('file_${id}').click()" class="bg-slate-200 hover:bg-slate-300 text-slate-700 px-3 rounded-xl border border-slate-300 text-[10px] font-black uppercase tracking-wider">ANEXO</button>
+            <div><input type="text" name="${prefix}_JUST" class="input-premium" placeholder="Justificativa"></div>
+            <div>
+              <button type="button" id="btn_file_${id}" onclick="document.getElementById('file_${id}').click()" class="bg-slate-200 hover:bg-slate-300 text-slate-700 w-full text-[10px] font-black h-[38px] rounded-lg border border-slate-300 transition-all uppercase tracking-wider">ANEXO</button>
               <input type="file" id="file_${id}" class="hidden" onchange="handleFileUpload(this, '${id}')">
             </div>
           </div>`;
         }
         else if (item.type === 'plano_real_anexo') {
-          html += `<div class="grid-row-item">
+          html += `<div class="unified-grid-row">
             <div class="font-bold text-slate-700 text-sm">${item.label}</div>
-            <div><input type="number" name="${prefix}_PLANO" class="input-premium" placeholder="Plano"></div>
-            <div><input type="number" name="${prefix}_REAL" class="input-premium" placeholder="Real"></div>
-            <div class="flex gap-2">
-               <button type="button" id="btn_file_${id}" onclick="document.getElementById('file_${id}').click()" class="bg-slate-200 hover:bg-slate-300 text-slate-700 px-3 rounded-xl border border-slate-300 flex-1 text-[10px] font-black h-[52px] transition-all uppercase tracking-wider">ANEXO</button>
+            <div class="grid grid-cols-2 gap-1">
+              <input type="number" name="${prefix}_PLANO" class="input-premium text-center" placeholder="Plan">
+              <input type="number" name="${prefix}_REAL" class="input-premium text-center" placeholder="Real">
+            </div>
+            <div><input type="text" class="input-premium opacity-50" placeholder="Sem justificativa" disabled></div>
+            <div>
+               <button type="button" id="btn_file_${id}" onclick="document.getElementById('file_${id}').click()" class="bg-slate-200 hover:bg-slate-300 text-slate-700 w-full text-[10px] font-black h-[38px] rounded-lg border border-slate-300 transition-all uppercase tracking-wider">ANEXO</button>
                <input type="file" id="file_${id}" class="hidden" onchange="handleFileUpload(this, '${id}')">
             </div>
           </div>`;
         }
         else if (item.type === 'idle_custom') {
-          html += `<div class="grid-row-idle">
+          html += `<div class="unified-grid-row">
             <div class="font-bold text-slate-700 text-sm">${item.label}</div>
-            <div><input type="text" name="${prefix}_IDLE" class="input-premium" placeholder="IDLE"></div>
-            <div><input type="number" name="${prefix}_REAL" class="input-premium" placeholder="Real"></div>
+            <div class="grid grid-cols-2 gap-1">
+              <input type="text" name="${prefix}_IDLE" class="input-premium text-center" placeholder="IDLE">
+              <input type="number" name="${prefix}_REAL" class="input-premium text-center" placeholder="Real">
+            </div>
             <div><input type="text" name="${prefix}_JUST" class="input-premium" placeholder="Justificativa"></div>
-            <div class="flex gap-2">
-               <button type="button" id="btn_file_${id}" onclick="document.getElementById('file_${id}').click()" class="bg-slate-200 hover:bg-slate-300 text-slate-700 px-3 rounded-xl border border-slate-300 flex-1 text-[10px] font-black uppercase tracking-wider">ANEXO</button>
+            <div>
+               <button type="button" id="btn_file_${id}" onclick="document.getElementById('file_${id}').click()" class="bg-slate-200 hover:bg-slate-300 text-slate-700 w-full text-[10px] font-black h-[38px] rounded-lg border border-slate-300 transition-all uppercase tracking-wider">ANEXO</button>
                <input type="file" id="file_${id}" class="hidden" onchange="handleFileUpload(this, '${id}')">
             </div>
           </div>`;
         }
         else if (item.type === 'qtd_real_anexo') {
-          html += `<div class="grid-row-item">
+          html += `<div class="unified-grid-row">
             <div class="font-bold text-slate-700 text-sm">${item.label}</div>
-            <div><input type="number" name="${prefix}_QTD" class="input-premium" placeholder="Quantidade"></div>
-            <div><input type="number" name="${prefix}_REAL" class="input-premium" placeholder="Real"></div>
-            <div class="flex gap-2">
-               <button type="button" id="btn_file_${id}" onclick="document.getElementById('file_${id}').click()" class="bg-slate-200 hover:bg-slate-300 text-slate-700 px-3 rounded-xl border border-slate-300 flex-1 text-[10px] font-black uppercase tracking-wider">ANEXO</button>
+            <div class="grid grid-cols-2 gap-1">
+              <input type="number" name="${prefix}_QTD" class="input-premium text-center" placeholder="Qtd">
+              <input type="number" name="${prefix}_REAL" class="input-premium text-center" placeholder="Real">
+            </div>
+            <div><input type="text" class="input-premium opacity-50" placeholder="Sem justificativa" disabled></div>
+            <div>
+               <button type="button" id="btn_file_${id}" onclick="document.getElementById('file_${id}').click()" class="bg-slate-200 hover:bg-slate-300 text-slate-700 w-full text-[10px] font-black h-[38px] rounded-lg border border-slate-300 transition-all uppercase tracking-wider">ANEXO</button>
                <input type="file" id="file_${id}" class="hidden" onchange="handleFileUpload(this, '${id}')">
             </div>
           </div>`;
         }
         else if (item.type === 'real_just_anexo') {
-          html += `<div class="grid-row-item">
-            <div class="font-bold text-slate-700 text-sm">${item.label} <span class="block text-[10px] text-slate-400 mt-0.5 font-medium">${item.desc || ''}</span></div>
+          html += `<div class="unified-grid-row">
+            <div class="font-bold text-slate-700 text-sm">${item.label} <span class="inline-block text-[9px] text-slate-400 font-medium">${item.desc || ''}</span></div>
             <div><input type="number" name="${prefix}_REAL" class="input-premium" placeholder="Real"></div>
-            <div class="col-span-2 flex gap-2">
-              <input type="text" name="${prefix}_JUST" class="input-premium flex-1" placeholder="Justificativa">
-              <button type="button" id="btn_file_${id}" onclick="document.getElementById('file_${id}').click()" class="bg-slate-200 hover:bg-slate-300 text-slate-700 px-3 rounded-xl border border-slate-300 text-[10px] font-black uppercase tracking-wider">ANEXO</button>
+            <div><input type="text" name="${prefix}_JUST" class="input-premium" placeholder="Justificativa"></div>
+            <div>
+              <button type="button" id="btn_file_${id}" onclick="document.getElementById('file_${id}').click()" class="bg-slate-200 hover:bg-slate-300 text-slate-700 w-full text-[10px] font-black h-[38px] rounded-lg border border-slate-300 transition-all uppercase tracking-wider">ANEXO</button>
               <input type="file" id="file_${id}" class="hidden" onchange="handleFileUpload(this, '${id}')">
             </div>
           </div>`;
         }
         else if (item.type === 'sim_nao_just_anexo') {
-          html += `<div class="grid-row-item">
+          html += `<div class="unified-grid-row">
             <div class="font-bold text-slate-700 text-sm">${item.label}</div>
-            <div class="flex gap-2">
+            <div class="flex gap-1">
               <button type="button" onclick="setToggle(this, '${id}_v', 'SIM')" class="btn-toggle text-xs">SIM</button>
               <button type="button" onclick="setToggle(this, '${id}_v', 'NÃO')" class="btn-toggle text-xs">NÃO</button>
               <input type="hidden" id="${id}_v" name="${prefix}_STATUS">
             </div>
-            <div class="col-span-2 flex gap-2">
-              <input type="text" name="${prefix}_JUST" class="input-premium flex-1" placeholder="Justificativa">
-              <button type="button" id="btn_file_${id}" onclick="document.getElementById('file_${id}').click()" class="bg-slate-200 hover:bg-slate-300 text-slate-700 px-3 rounded-xl border border-slate-300 text-[10px] font-black uppercase tracking-wider">ANEXO</button>
+            <div><input type="text" name="${prefix}_JUST" class="input-premium" placeholder="Justificativa"></div>
+            <div>
+              <button type="button" id="btn_file_${id}" onclick="document.getElementById('file_${id}').click()" class="bg-slate-200 hover:bg-slate-300 text-slate-700 w-full text-[10px] font-black h-[38px] rounded-lg border border-slate-300 transition-all uppercase tracking-wider">ANEXO</button>
+              <input type="file" id="file_${id}" class="hidden" onchange="handleFileUpload(this, '${id}')">
+            </div>
+          </div>`;
+        }
+        else if (item.type === 'qtd_just_anexo') {
+          html += `<div class="unified-grid-row">
+            <div class="font-bold text-slate-700 text-sm">${item.label}</div>
+            <div><input type="number" name="${prefix}_QTD" class="input-premium" placeholder="Qtd"></div>
+            <div><input type="text" name="${prefix}_JUST" class="input-premium" placeholder="Justificativa"></div>
+            <div>
+              <button type="button" id="btn_file_${id}" onclick="document.getElementById('file_${id}').click()" class="bg-slate-200 hover:bg-slate-300 text-slate-700 w-full text-[10px] font-black h-[38px] rounded-lg border border-slate-300 transition-all uppercase tracking-wider">ANEXO</button>
               <input type="file" id="file_${id}" class="hidden" onchange="handleFileUpload(this, '${id}')">
             </div>
           </div>`;
         }
         else if (item.type === 'perc_just_anexo') {
-          html += `<div class="grid-row-item">
+          html += `<div class="unified-grid-row">
             <div class="font-bold text-slate-700 text-sm">${item.label}</div>
-            <div><input type="text" name="${prefix}_PORCENTAGEM" class="input-premium text-center" placeholder="%"></div>
-            <div class="col-span-2 flex gap-2">
-              <input type="text" name="${prefix}_JUST" class="input-premium flex-1" placeholder="Justificativa">
-              <button type="button" id="btn_file_${id}" onclick="document.getElementById('file_${id}').click()" class="bg-slate-200 hover:bg-slate-300 text-slate-700 px-3 rounded-xl border border-slate-300 text-[10px] font-black uppercase tracking-wider">ANEXO</button>
-              <input type="file" id="file_${id}" class="hidden" onchange="handleFileUpload(this, '${id}')">
-            </div>
-          </div>`;
-        }
-        else if (item.type === 'input_text_only') {
-          html += `<div class="grid-row-single">
-            <div class="font-bold text-slate-700 text-sm">${item.label}</div>
-            <div><input type="text" name="${prefix}_TEXTO" class="input-premium" placeholder="Nome / Informação"></div>
-          </div>`;
-        }
-        else if (item.type === 'input_number_only') {
-          html += `<div class="grid-row-single">
-            <div class="font-bold text-slate-700 text-sm">${item.label}</div>
-            <div><input type="number" name="${prefix}_QUANTIDADE" class="input-premium text-center" placeholder="Quantidade"></div>
-          </div>`;
-        }
-        else if (item.type === 'input_date_only') {
-          html += `<div class="grid-row-single">
-            <div class="font-bold text-slate-700 text-sm">${item.label}</div>
-            <div><input type="date" name="${prefix}_DATA" class="input-premium"></div>
-          </div>`;
-        }
-        else if (item.type === 'input_perc_only') {
-          html += `<div class="grid-row-single">
-            <div class="font-bold text-slate-700 text-sm">${item.label}</div>
-            <div><input type="text" name="${prefix}_PORCENTAGEM" class="input-premium text-center" placeholder="%"></div>
-          </div>`;
-        }
-        else if (item.type === 'input_just_only') {
-          html += `<div class="grid-row-single">
-            <div class="font-bold text-slate-700 text-sm">${item.label}</div>
-            <div><input type="text" name="${prefix}_JUSTIFICATIVA" class="input-premium" placeholder="Justificativa"></div>
-          </div>`;
-        }
-        else if (item.type === 'qtd_just_anexo') {
-          html += `<div class="grid-row-item">
-            <div class="font-bold text-slate-700 text-sm">${item.label}</div>
-            <div><input type="number" name="${prefix}_QTD" class="input-premium text-center" placeholder="Qtd"></div>
-            <div class="col-span-2 flex gap-2">
-              <input type="text" name="${prefix}_JUST" class="input-premium flex-1" placeholder="Justificativa">
-              <button type="button" id="btn_file_${id}" onclick="document.getElementById('file_${id}').click()" class="bg-slate-200 hover:bg-slate-300 text-slate-700 px-3 rounded-xl border border-slate-300 text-[10px] font-black uppercase tracking-wider">ANEXO</button>
+            <div><input type="text" name="${prefix}_PERC" class="input-premium text-center" placeholder="%"></div>
+            <div><input type="text" name="${prefix}_JUST" class="input-premium" placeholder="Justificativa"></div>
+            <div>
+              <button type="button" id="btn_file_${id}" onclick="document.getElementById('file_${id}').click()" class="bg-slate-200 hover:bg-slate-300 text-slate-700 w-full text-[10px] font-black h-[38px] rounded-lg border border-slate-300 transition-all uppercase tracking-wider">ANEXO</button>
               <input type="file" id="file_${id}" class="hidden" onchange="handleFileUpload(this, '${id}')">
             </div>
           </div>`;
         }
         else if (item.type === 'meta_real_just_anexo') {
-          html += `<div class="grid-row-item">
+          html += `<div class="unified-grid-row">
             <div class="font-bold text-slate-700 text-sm">${item.label}</div>
-            <div class="flex gap-2">
-              <input type="number" name="${prefix}_META" class="input-premium text-center" placeholder="Meta">
-              <input type="number" name="${prefix}_REAL" class="input-premium text-center" placeholder="Real">
+            <div class="grid grid-cols-2 gap-1">
+              <input type="text" name="${prefix}_MEL" class="input-premium text-center text-xs" placeholder="Mel">
+              <input type="text" name="${prefix}_REA" class="input-premium text-center text-xs" placeholder="Rea">
             </div>
-            <div class="col-span-2 flex gap-2">
-              <input type="text" name="${prefix}_JUST" class="input-premium flex-1" placeholder="Justificativa">
-              <button type="button" id="btn_file_${id}" onclick="document.getElementById('file_${id}').click()" class="bg-slate-200 hover:bg-slate-300 text-slate-700 px-3 rounded-xl border border-slate-300 text-[10px] font-black uppercase tracking-wider">ANEXO</button>
+            <div><input type="text" name="${prefix}_JUST" class="input-premium" placeholder="Justificativa"></div>
+            <div>
+              <button type="button" id="btn_file_${id}" onclick="document.getElementById('file_${id}').click()" class="bg-slate-200 hover:bg-slate-300 text-slate-700 w-full text-[10px] font-black h-[38px] rounded-lg border border-slate-300 transition-all uppercase tracking-wider">ANEXO</button>
               <input type="file" id="file_${id}" class="hidden" onchange="handleFileUpload(this, '${id}')">
             </div>
           </div>`;
         }
-        else if (item.type === 'input_just_anexo_only') {
-          html += `<div class="grid-row-item">
+        else if (item.type === 'input_text_only') {
+          html += `<div class="unified-grid-row">
             <div class="font-bold text-slate-700 text-sm">${item.label}</div>
-            <div class="col-span-3 flex gap-2">
-              <input type="text" name="${prefix}_JUST" class="input-premium flex-1" placeholder="Observações Gerais">
-              <button type="button" id="btn_file_${id}" onclick="document.getElementById('file_${id}').click()" class="bg-slate-200 hover:bg-slate-300 text-slate-700 px-3 rounded-xl border border-slate-300 text-[10px] font-black uppercase tracking-wider">ANEXO</button>
+            <div class="col-span-2"><input type="text" name="${prefix}_TEXT" class="input-premium" placeholder="Nome / Informação"></div>
+            <div><input type="text" class="input-premium opacity-30 text-center" placeholder="-" disabled></div>
+          </div>`;
+        }
+        else if (item.type === 'input_date_only') {
+          html += `<div class="unified-grid-row">
+            <div class="font-bold text-slate-700 text-sm">${item.label}</div>
+            <div><input type="date" name="${prefix}_DATE" class="input-premium"></div>
+            <div><input type="text" class="input-premium opacity-50" placeholder="Sem observações" disabled></div>
+            <div><input type="text" class="input-premium opacity-30 text-center" placeholder="-" disabled></div>
+          </div>`;
+        }
+        else if (item.type === 'input_number_only') {
+          html += `<div class="unified-grid-row">
+            <div class="font-bold text-slate-700 text-sm">${item.label}</div>
+            <div><input type="number" name="${prefix}_NUM" class="input-premium text-center" placeholder="Qtd"></div>
+            <div><input type="text" class="input-premium opacity-50" placeholder="Sem observações" disabled></div>
+            <div><input type="text" class="input-premium opacity-30 text-center" placeholder="-" disabled></div>
+          </div>`;
+        }
+        else if (item.type === 'input_perc_only') {
+          html += `<div class="unified-grid-row">
+            <div class="font-bold text-slate-700 text-sm">${item.label}</div>
+            <div><input type="text" name="${prefix}_PERC" class="input-premium text-center" placeholder="%"></div>
+            <div><input type="text" class="input-premium opacity-50" placeholder="Sem observações" disabled></div>
+            <div><input type="text" class="input-premium opacity-30 text-center" placeholder="-" disabled></div>
+          </div>`;
+        }
+        else if (item.type === 'input_just_only') {
+          html += `<div class="unified-grid-row">
+            <div class="font-bold text-slate-700 text-sm">${item.label}</div>
+            <div class="col-span-2"><input type="text" name="${prefix}_JUST" class="input-premium" placeholder="Análise de LC / Produtividade"></div>
+            <div><input type="text" class="input-premium opacity-30 text-center" placeholder="-" disabled></div>
+          </div>`;
+        }
+        else if (item.type === 'input_just_anexo_only') {
+          html += `<div class="unified-grid-row">
+            <div class="font-bold text-slate-700 text-sm">${item.label}</div>
+            <div class="col-span-2"><input type="text" name="${prefix}_JUST" class="input-premium" placeholder="Observações Gerais"></div>
+            <div>
+              <button type="button" id="btn_file_${id}" onclick="document.getElementById('file_${id}').click()" class="bg-slate-200 hover:bg-slate-300 text-slate-700 w-full text-[10px] font-black h-[38px] rounded-lg border border-slate-300 transition-all uppercase tracking-wider">ANEXO</button>
               <input type="file" id="file_${id}" class="hidden" onchange="handleFileUpload(this, '${id}')">
             </div>
           </div>`;
@@ -686,112 +726,138 @@
 
     function setToggle(btn, inputId, val) {
       const parent = btn.parentElement;
-      parent.querySelectorAll('.btn-toggle').forEach(b => {
-        b.classList.remove('active-sim', 'active-nao');
-      });
-      if(val === 'SIM') btn.classList.add('active-sim');
-      if(val === 'NÃO') btn.classList.add('active-nao');
+      parent.querySelectorAll('.btn-toggle').forEach(b => b.classList.remove('active-sim', 'active-nao'));
       document.getElementById(inputId).value = val;
+      if (val === 'SIM') btn.classList.add('active-sim');
+      else btn.classList.add('active-nao');
     }
 
     function calcPerc(id) {
-      const meta = parseFloat(document.getElementById(`meta_${id}`).value);
-      const real = parseFloat(document.getElementById(`real_${id}`).value);
-      if(meta && real) {
-        const p = ((real / meta) * 100).toFixed(1);
-        document.getElementById(`perc_${id}`).value = p + '%';
+      const meta = parseFloat(document.getElementById(`meta_${id}`).value) || 0;
+      const real = parseFloat(document.getElementById(`real_${id}`).value) || 0;
+      const out = document.getElementById(`perc_${id}`);
+      if(meta > 0) {
+        out.value = ((real / meta) * 100).toFixed(1) + '%';
       } else {
-        document.getElementById(`perc_${id}`).value = '';
+        out.value = '0%';
       }
     }
 
     function handleFileUpload(input, id) {
-      if(input.files && input.files[0]) {
-        const file = input.files[0];
-        const reader = new FileReader();
-        reader.onload = function(e) {
+      if (!input.files || !input.files[0]) return;
+      const file = input.files[0];
+      const reader = new FileReader();
+      
+      const btn = document.getElementById(`btn_file_${id}`);
+      if(btn) {
+        btn.innerText = "CARREGANDO...";
+        btn.style.opacity = "0.6";
+      }
+
+      reader.onload = function(e) {
+        const img = new Image();
+        img.src = e.target.result;
+        img.onload = function() {
+          const canvas = document.getElementById('photoCanvas');
+          const ctx = canvas.getContext('2d');
+          
+          let width = img.width;
+          let height = img.height;
+          const max = 800;
+          
+          if (width > height && width > max) { height *= max / width; width = max; }
+          else if (height > max) { width *= max / height; height = max; }
+          
+          canvas.width = width;
+          canvas.height = height;
+          ctx.drawImage(img, 0, 0, width, height);
+          
+          const compressed = canvas.toDataURL('image/jpeg', 0.7);
+          
           if(id === 'final') {
-            document.getElementById('data_final').value = e.target.result;
-            document.getElementById('btn_file_final').classList.add('btn-attached');
-            document.getElementById('btn_file_final').innerText = "✅ ANEXADO";
+            document.getElementById('data_final').value = compressed;
           } else {
-            document.getElementById(`btn_file_${id}`).classList.add('btn-attached');
-            document.getElementById(`btn_file_${id}`).innerText = "✅ OK";
+            let hidden = document.getElementById(`hidden_file_${id}`);
+            if(!hidden) {
+              hidden = document.createElement('input');
+              hidden.type = 'hidden';
+              hidden.id = `hidden_file_${id}`;
+              hidden.name = input.name + "_FOTO";
+              input.parentElement.appendChild(hidden);
+            }
+            hidden.value = compressed;
+          }
+
+          if(btn) {
+            btn.innerText = "✅ OK";
+            btn.classList.add('btn-attached');
+            btn.style.opacity = "1";
           }
         }
-        reader.readAsDataURL(file);
       }
+      reader.readAsDataURL(file);
     }
 
     function baixarRelatorio() {
-      const containerElement = document.getElementById('report-content');
+      const el = document.getElementById('report-content');
+      el.classList.add('canvas-snapshot');
       
-      // Correção do Bug do html2canvas com inputs: Transfere os valores atuais para atributos value estáticos antes do print
-      containerElement.querySelectorAll('input').forEach(input => {
-        if(input.type === 'text' || input.type === 'number' || input.type === 'date' || input.type === 'time') {
-          input.setAttribute('value', input.value);
-        }
-      });
-      containerElement.querySelectorAll('textarea').forEach(text => {
-        text.innerHTML = text.value;
-      });
-      containerElement.querySelectorAll('select').forEach(select => {
-        const selectedOption = select.options[select.selectedIndex];
-        if(selectedOption) {
-          // Garante a exibição do texto selecionado no mockup do canvas
-          select.setAttribute('data-selected', selectedOption.text);
-        }
-      });
+      const btnDownload = document.getElementById('btnDownload');
+      const originalText = btnDownload.innerText;
+      btnDownload.innerText = "PROCESSANDO CARD...";
 
-      // Aplica classe para controle de snapshot estável
-      containerElement.classList.add('canvas-snapshot');
-
-      // Configuração premium do html2canvas para gerar um PNG perfeito e de alta fidelidade visual
-      const options = {
-        scale: 2, 
-        useCORS: true,
-        allowTaint: true,
-        backgroundColor: "#f5f7fb",
-        logging: false
-      };
-
-      html2canvas(containerElement, options).then(canvas => {
+      html2canvas(el, { scale: 2, useCORS: true, logging: false }).then(canvas => {
         const link = document.createElement('a');
-        const area = document.getElementById('areaSelect').value || 'GERAL';
-        link.download = `Passagem_Turno_${area}_${new Date().toISOString().slice(0,10)}.png`;
+        link.download = `Passagem_Turno_${new Date().toISOString().split('T')[0]}.png`;
         link.href = canvas.toDataURL('image/png');
         link.click();
         
-        // Remove as modificações temporárias pós snapshot
-        containerElement.classList.remove('canvas-snapshot');
+        el.classList.remove('canvas-snapshot');
+        btnDownload.innerText = originalText;
       }).catch(err => {
-        console.error("Erro ao gerar o card em imagem PNG: ", err);
-        containerElement.classList.remove('canvas-snapshot');
+        console.error(err);
+        el.classList.remove('canvas-snapshot');
+        btnDownload.innerText = originalText;
       });
     }
 
     function enviarDados() {
       const form = document.getElementById('eosForm');
-      if(!form.checkValidity()) {
+      if (!form.checkValidity()) {
         form.reportValidity();
         return;
       }
 
-      document.getElementById('btnText').innerText = "Enviando para o Drive...";
-      document.getElementById('btnSpinner').style.display = "block";
-      document.getElementById('btnEnviar').disabled = true;
+      const btn = document.getElementById('btnEnviar');
+      const txt = document.getElementById('btnText');
+      const spin = document.getElementById('btnSpinner');
+
+      btn.disabled = true;
+      txt.innerText = "Processando e Salvando...";
+      spin.style.display = "block";
 
       const formData = new FormData(form);
-      const data = {};
-      formData.forEach((value, key) => { data[key] = value; });
+      const dataObj = {};
+      formData.forEach((val, key) => { dataObj[key] = val; });
 
-      // Simulação de envio para endpoint API Apps Script / Drive
-      setTimeout(() => {
+      fetch('https://script.google.com/macros/s/AKfycbwYgRGo6S2oI8pY9Zlq4A_h16X-RzDof392_8T9y_22bBv_gQJvI2wRndM68pDshf5u/exec', {
+        method: 'POST',
+        mode: 'no-cors',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(dataObj)
+      })
+      .then(() => {
         document.getElementById('success-modal').style.display = 'flex';
-        document.getElementById('btnText').innerText = "Finalizar e Enviar Relatório";
-        document.getElementById('btnSpinner').style.display = "none";
-        document.getElementById('btnEnviar').disabled = false;
-      }, 2000);
+      })
+      .catch(err => {
+        console.error(err);
+        alert('Erro ao enviar dados. Tente novamente.');
+      })
+      .finally(() => {
+        btn.disabled = false;
+        txt.innerText = "Finalizar e Enviar Relatório";
+        spin.style.display = "none";
+      });
     }
   </script>
 </body>
